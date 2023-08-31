@@ -1,24 +1,7 @@
-import { useEffect, useState } from "react";
-import apiClient from "../services/api-client";
+import UseGames from "../hooks/UseGames";
 
-interface Game {
-  id: number;
-  name: string;
-}
-interface FatchGameResponse {
-  count: number;
-  results: Game[];
-}
 const GameGrid = () => {
-  const [games, setGames] = useState<Game[]>([]);
-  const [error, setError] = useState("");
-
-  useEffect(() => {
-    apiClient
-      .get<FatchGameResponse>("/games")
-      .then((res) => setGames(res.data.results))
-      .catch((err) => setError(err.message));
-  });
+  const { games, error } = UseGames();
   return (
     <>
       {error && <p className="text-danger">{error}</p>}
