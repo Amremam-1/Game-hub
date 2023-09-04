@@ -1,7 +1,6 @@
 import { HStack, List, ListItem, Image, Text, Spinner } from "@chakra-ui/react";
 import useGenres from "../hooks/useGenres";
 import getCroppedImageUrl from "../services/image-url";
-import GameCardContainer from "./GameCardContainer";
 import GenreSkeleton from "./GenreSkeleton";
 
 const GenreList = () => {
