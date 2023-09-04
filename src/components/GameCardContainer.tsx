@@ -13,3 +13,5 @@ const GameCardContainer = ({ children }: props) => {
 };
 
 export default GameCardContainer;
+
+
