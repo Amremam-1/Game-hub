@@ -2,9 +2,10 @@ import { GameQuery } from "../App";
 import { FetchResponse } from "../services/api-client";
 import { useInfiniteQuery, useQuery } from "@tanstack/react-query";
 import APIClient from "../services/api-client";
-import { Platform } from "./usePlatForm";
+import { Platform } from "./usePlatForms";
 
 const apiClient = new APIClient<Game>("/games");
+
 export interface Game {
   id: number;
   name: string;
