@@ -4,12 +4,21 @@ import usePlatFrom, { Platform } from "../hooks/usePlatForm";
 
 interface props {
   onSelectedPlatform: (platform: Platform) => void;
-  selectedPlatform: Platform | null;
+  selectedPlatformId?: number;
 }
 
-const PlatformSelector = ({ onSelectedPlatform, selectedPlatform }: props) => {
+const PlatformSelector = ({
+  onSelectedPlatform,
+  selectedPlatformId,
+}: props) => {
   const { data, error } = usePlatFrom();
+
+  const selectedPlatform = data?.results.find(
+    (p) => p.id === selectedPlatformId
+  );
+
   if (error) return null;
+
   return (
     <Menu>
       <MenuButton as={Button} rightIcon={<BsChevronDown />}>

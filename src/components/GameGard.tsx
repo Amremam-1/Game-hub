@@ -21,7 +21,7 @@ const GameGard = ({ game }: props) => {
           <CriticScore score={game.metacritic} />
         </HStack>
         <Heading fontSize="2xl">{game.name}</Heading>
-        <Emoij rating={game.rating_top}/>
+        <Emoij rating={game.rating_top} />
       </CardBody>
     </Card>
   );
