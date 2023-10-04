@@ -4,6 +4,7 @@ import getCroppedImageUrl from "../services/image-url";
 import CriticScore from "./CriticScore";
 import Emoij from "./Emoij";
 import PlatFormIconList from "./PlatFormIconList";
+import { Link } from "react-router-dom";
 
 interface props {
   game: Game;
@@ -20,7 +21,9 @@ const GameGard = ({ game }: props) => {
           />
           <CriticScore score={game.metacritic} />
         </HStack>
-        <Heading fontSize="2xl">{game.name}</Heading>
+        <Heading fontSize="2xl">
+          <Link to={"/games/" + game.slug}>{game.name}</Link>
+        </Heading>
         <Emoij rating={game.rating_top} />
       </CardBody>
     </Card>
