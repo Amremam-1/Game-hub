@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { screenshots } from "../entities/Screenshot";
+import screenshots from "../entities/Screenshot";
 import APIClient from "../services/api-client";
 
 const useScreenshots = (gameId: number) => {
